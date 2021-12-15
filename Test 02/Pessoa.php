@@ -2,16 +2,26 @@
 
 class Pessoa
 {
-    private string $caminho;
+    private string $nome;
+    private DateTimeImmutable $dataNascimento;
 
-    public function __construct(string $caminho) 
+    public function __construct(string $nome, DateTimeImmutable $dataNascimento) 
     {
-        $this->$caminho = $caminho;
+        $this->$nome = $nome;
+        $this->$dataNascimento = $dataNascimento;
     }
 
-    public function escreve(string $conteudo) 
+    public function nome(): string 
     {
-        file_put_contents($this->$caminho, data:$conteudo . PHP_EQL, flags:FILE_APPEND);
+        return $this->$nome;
+    }
+
+    public function idade(): int 
+    {
+        $hoje = new DateTimeImmutable();
+        $diferença = $this->dataNascimento->diff($hoje);
+
+        return $diferença->y;
     }
 
 }
