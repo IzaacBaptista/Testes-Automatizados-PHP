@@ -1,11 +1,11 @@
 <?php
 //importando
 require_once 'Pessoa.php';
-require_once 'ExportadorDePessoaEmXmll.php';
+require_once 'ExportadorDePessoaEmXml.php';
 
 //criando ambiente 
 $pessoa = new Pessoa(nome 'Izaac', DateTimeImmutable(time: '1993-01-03'));
-$exportador = new ExportadorDePessoaEmXmll($pessoa);
+$exportador = new ExportadorDePessoaEmXml($pessoa);
 
 //executando
 xml = exportador->ExportaEmXml();
