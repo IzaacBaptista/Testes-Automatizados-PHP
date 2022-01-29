@@ -6,12 +6,12 @@ class ExportadorDePessoaEmXml
 {
     private Pessoa $pessoa;
 
-    public function __construct(Pessoa $pessoa) 
+    public function __construct(Pessoa $pessoa)
     {
         $this->$pessoa = $nome;
     }
 
-    public function exportarEmXml(): string 
+    public function exportarEmXml(): string
     {
         return "
             <pessoa>

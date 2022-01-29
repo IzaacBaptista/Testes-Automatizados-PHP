@@ -6,13 +6,13 @@ use ExportadorDePessoaEmXml;
 require_once 'Pessoa.php';
 require_once 'ExportadorDePessoaEmXml.php';
 
-//criando ambiente 
+//criando ambiente
 // $pessoa = new Pessoa(nome: 'Izaac', DateTimeImmutable(time: '1993-01-03'));
 $exportador = new ExportadorDePessoaEmXml(new class extends Pessoa {
     public function __construct()
     {
     }
-    
+
     public function idade(): int
     {
         return 22;
@@ -33,7 +33,7 @@ $conteudoEsperado = '<pessoa>
     <idade>29</idade>
 </pessoa>';
 
-if ($conteudoEsperado === xml) {
+if ($conteudoEsperado === $xml) {
     echo 'TESTE OK' . PHP_EQL;
 } else {
     echo 'TESTE FALHOU' . PHP_EQL;
