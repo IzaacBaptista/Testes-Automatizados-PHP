@@ -1,8 +1,12 @@
 <?php
 
-    require_once 'Pessoa.php';
+use Pessoa;
+use DateTimeImmutable;
 
-    Pessoa = new Pessoa(nome: 'Izaac', new DateTmeImmutable(time:'1993-01-03'));
+require_once 'Pessoa.php';
+require_once 'ExportadorDePessoaEmXml.php';
+
+    $Pessoa = new Pessoa(nome: 'Izaac', new DateTimeImmutable(time:'1993-01-03'));
 
     $idadePessoa = $pessoa->idade();
 

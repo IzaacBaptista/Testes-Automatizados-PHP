@@ -1,5 +1,7 @@
 <?php
 
+use Pessoa;
+
 class ExportadorDePessoaEmXml
 {
     private Pessoa $pessoa;

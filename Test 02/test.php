@@ -1,17 +1,28 @@
 <?php
 //importando
+use Pessoa;
+use ExportadorDePessoaEmXml;
+
 require_once 'Pessoa.php';
 require_once 'ExportadorDePessoaEmXml.php';
 
 //criando ambiente 
-$pessoa = new Pessoa(nome 'Izaac', DateTimeImmutable(time: '1993-01-03'));
-$exportador = new ExportadorDePessoaEmXml($pessoa);
+// $pessoa = new Pessoa(nome: 'Izaac', DateTimeImmutable(time: '1993-01-03'));
+$exportador = new ExportadorDePessoaEmXml(new class extends Pessoa {
+    public function idade(): int
+    {
+        return 22;
+    }
+});
 
 //executando
-xml = exportador->ExportaEmXml();
+$xml = $exportador->exportaEmXml();
 
 //verificando
-$conteudoEsperado = '<pessoa><nome>Izaac</nome><idade>29</idade></pessoa>';
+$conteudoEsperado = '<pessoa>
+    <nome>Izaac</nome>
+    <idade>29</idade>
+</pessoa>';
 
 if ($conteudoEsperado === xml) {
     echo 'TESTE OK' . PHP_EQL;
