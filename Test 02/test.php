@@ -13,6 +13,11 @@ $exportador = new ExportadorDePessoaEmXml(new class extends Pessoa {
     {
         return 22;
     }
+
+    public function nome(): string
+    {
+        return 'Izaac';
+    }
 });
 
 //executando
