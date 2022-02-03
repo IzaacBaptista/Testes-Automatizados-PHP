@@ -9,13 +9,14 @@ require_once 'ExportadorDePessoaEmXml.php';
 //criando ambiente
 // $pessoa = new Pessoa(nome: 'Izaac', DateTimeImmutable(time: '1993-01-03'));
 $exportador = new ExportadorDePessoaEmXml(new class extends Pessoa {
+    
     public function __construct()
     {
     }
 
     public function idade(): int
     {
-        return 22;
+        return 29;
     }
 
     public function nome(): string
